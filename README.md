@@ -57,7 +57,6 @@ git clone https://github.com/happyOssui/game83799.git
 | 服务商 | Base URL | Model 示例 |
 |--------|----------|------------|
 | Anthropic | `https://api.anthropic.com/v1/messages` | `claude-sonnet-4-20250514` |
-| DeepSeek | `https://api.deepseek.com/v1/messages` | `deepseek-v4-flash` |
 | 本地模型 | `http://localhost:8080/v1/messages` | 自定义 |
 
 > 只需兼容 Anthropic Messages API 格式即可使用。
