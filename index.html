@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>五子棋 AI 对弈</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>五子棋 AI 对弈</h1>
+            <p class="subtitle">与真正的 AI 来一局对弈</p>
+        </header>
+
+        <main class="content">
+            <div class="game-section">
+                <div class="game-info">
+                    <div class="status" id="status">请配置 API 后开始</div>
+                    <div class="ai-comment" id="aiComment"></div>
+                    <button class="restart-btn" id="restartBtn" disabled>重新开始</button>
+                </div>
+                <div class="board-container">
+                    <div id="board" class="board"></div>
+                    <div class="loading-overlay" id="loadingOverlay">
+                        <div class="loading-spinner"></div>
+                        <div>AI 思考中...</div>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="sidebar">
+                <div class="config-panel">
+                    <h2>API 配置</h2>
+                    <div class="form-group">
+                        <label for="baseUrl">API Base URL</label>
+                        <input type="text" id="baseUrl" placeholder="https://api.anthropic.com/v1/messages" value="https://api.anthropic.com/v1/messages">
+                    </div>
+                    <div class="form-group">
+                        <label for="apiKey">API Key</label>
+                        <input type="password" id="apiKey" placeholder="sk-xxxxxxxxxxxxxxxx">
+                    </div>
+                    <div class="form-group">
+                        <label for="model">Model</label>
+                        <input type="text" id="model" placeholder="deepseek-v4-flash" value="deepseek-v4-flash">
+                    </div>
+                    <div class="form-group">
+                        <label for="thinkingEffort">Thinking</label>
+                        <select id="thinkingEffort">
+                            <option value="disabled">disabled</option>
+                            <option value="enabled" selected>enabled</option>
+                            <option value="effort=low">effort=low</option>
+                            <option value="effort=medium">effort=medium</option>
+                            <option value="effort=high">effort=high</option>
+                            <option value="effort=max">effort=max</option>
+                        </select>
+                    </div>
+                    <button class="config-btn" id="saveConfigBtn">保存配置并开始</button>
+                </div>
+
+                <div class="rules-panel">
+                    <h2>规则说明</h2>
+                    <ul>
+                        <li>你执黑子先走，AI 执白子</li>
+                        <li>点击棋盘落子</li>
+                        <li>率先连成五子一线获胜</li>
+                        <li>获胜棋子会高亮显示</li>
+                        <li>对局结束 AI 会说句话</li>
+                        <li>支持兼容 Anthropic 格式 API</li>
+                    </ul>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <script src="game.js"></script>
+    <script src="api.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
