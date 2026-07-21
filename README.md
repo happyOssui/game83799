@@ -19,7 +19,7 @@
 1. 克隆仓库
 
 ```bash
-git clone https://github.com/happyOssui/game83799.git
+git clone https://github.com/happyDepth/game83799.git
 ```
 
 2. 用浏览器打开 `index.html`
